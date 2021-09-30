@@ -37,6 +37,7 @@ func (e *SQLInsertError) Error() string {
 }
 
 func createTable(tx *sql.Tx, spec TableSpec) error {
+	log.Println("postgis creating table", fmt.Sprintf("%s.%s", spec.Schema, spec.Name))
 	var sql string
 	var err error
 
